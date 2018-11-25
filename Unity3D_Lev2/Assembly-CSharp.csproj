@@ -163,6 +163,7 @@
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\KeyboardInputController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Main.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Models\FlashLightModel.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Views\FlashLightChargeView.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Views\FlashLightView.cs" />
      <None Include="Assets\Imported\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Imported\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
