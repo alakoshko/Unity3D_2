@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace FPS
@@ -13,7 +14,7 @@ namespace FPS
         [SerializeField]
         private float _drainMult = 3f;
         [SerializeField]
-        private float _rechargeTime = 5f;
+        private float _rechargeTime = 60f;
 
         private Light _light;
 
@@ -24,7 +25,19 @@ namespace FPS
             ChargeAmount = 1f;
         }
 
+        private void OnEnable()
+        {
+            StartCoroutine(ChangeFill());
+        }
+
+        private void OnDisable()
+        {
+            StopCoroutine(ChangeFill());
+        }
+
         public void On() {
+            if (ChargeAmount <= 0.3f) return;
+
             _light.enabled = true;
             if (FlashLightStateChanged != null) FlashLightStateChanged.Invoke(true);
         }
@@ -33,7 +46,7 @@ namespace FPS
             if (FlashLightStateChanged != null) FlashLightStateChanged.Invoke(false);
         }
 
-        private const float chargeDelay = .3f;
+        private const float chargeDelay = 1f;
         private IEnumerator ChangeFill()
         {
             while (true)
