@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace FPS
 {
-    public abstract class BaseObjectScene : MonoBehaviour
+    public abstract class BaseSceneObject : MonoBehaviour
     {
         protected int _layer;
         protected Color _color;
@@ -216,6 +216,14 @@ namespace FPS
         private void AskColor(Transform obj, Color color)
         {
             // Реализовать по аналогии с AskLayer
+            //obj.gameObject.color = color;       // Выставляем объекту цвет
+            //if (obj.childCount > 0)
+            //{
+            //    foreach (Transform d in obj) // Проходит по всем вложенным объектам
+            //    {
+            //        AskLayer(d, color);        // Рекурсивный вызов функции
+            //    }
+            //}
         }
         #endregion
 

@@ -53,8 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Imported\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Scripts\CameraController.cs" />
-     <Compile Include="Assets\Imported\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Scripts\IdleChanger.cs" />
      <Compile Include="Assets\Imported\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\Imported\SampleScenes\Menu\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Imported\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -159,17 +157,22 @@
      <Compile Include="Assets\Imported\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
      <Compile Include="Assets\Imported\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
      <Compile Include="Assets\ProjectsAssets\Characters\Knight\scripts\rotator.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Ammo\BaseAmmo.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Ammo\MagicArrow.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\BaseSceneObject.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\BaseController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\FlashLightController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\KeyboardInputController.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\WeaponsController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Main.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Models\FlashLightModel.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Models\PlayerModel.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Views\FlashLightChargeView.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Views\FlashLightView.cs" />
-     <None Include="Assets\Imported\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Weapons\BaseWeapons.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Weapons\MultiArrowsBowThrowingArms.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Weapons\SingleArrowBowThrowingArms.cs" />
      <None Include="Assets\Imported\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
-     <None Include="Assets\Imported\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\Imported\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Imported\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
      <None Include="Assets\Imported\Standard Assets\Environment\Water (Basic)\DO_NOT_WORK_IN_VR.txt" />
@@ -180,15 +183,11 @@
      <None Include="Assets\Imported\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Imported\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
      <None Include="Assets\Imported\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
-     <None Include="Assets\Imported\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
      <None Include="Assets\Imported\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
-     <None Include="Assets\Imported\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
      <None Include="Assets\Imported\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Imported\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
      <None Include="Assets\Imported\Standard Assets\Environment\Water\DO_NOT_WORK_IN_VR.txt" />
-     <None Include="Assets\Imported\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
      <None Include="Assets\Imported\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
-     <None Include="Assets\Imported\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
      <None Include="Assets\Imported\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Imported\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\ProjectsAssets\Characters\Knight\shaders\doublesidedshader.shader" />
@@ -196,13 +195,9 @@
      <None Include="Assets\Imported\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Imported\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
      <None Include="Assets\Imported\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
-     <None Include="Assets\Imported\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
      <None Include="Assets\Imported\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
-     <None Include="Assets\Imported\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
      <None Include="Assets\Imported\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
      <None Include="Assets\Imported\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
-     <None Include="Assets\Imported\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
-     <None Include="Assets\Imported\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
      <None Include="Assets\Imported\Standard Assets\Vehicles\Car\CarGuidelines.txt" />
      <None Include="Assets\Imported\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
      <None Include="Assets\Imported\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />

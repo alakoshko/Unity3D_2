@@ -10,6 +10,7 @@ namespace FPS
         
         public KeyboardInputController KeyboardInputController { get; private set; }
         public FlashLightController FlashLightController { get; private set; }
+        public WeaponsController WeaponsController { get; private set; }
 
         private void Awake()
         {
@@ -24,6 +25,7 @@ namespace FPS
         {
             KeyboardInputController = gameObject.AddComponent<KeyboardInputController>();
             FlashLightController = gameObject.AddComponent<FlashLightController>();
+            WeaponsController = gameObject.AddComponent<WeaponsController>();
         }
 
         // Update is called once per frame

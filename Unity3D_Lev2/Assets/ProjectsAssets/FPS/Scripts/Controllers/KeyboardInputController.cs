@@ -10,6 +10,14 @@ namespace FPS
         {
             if (Input.GetButtonDown("SwitchFlashLight"))
                 Main.Instance.FlashLightController.FlashLightSwitch();
+
+            if (Input.GetButtonDown("Fire1"))
+                Main.Instance.WeaponsController.SetFireForce();
+            if (Input.GetButtonUp("Fire1"))
+                Main.Instance.WeaponsController.Fire();
+
+            if (Input.GetButtonDown("ChangeWeapon"))
+                Main.Instance.WeaponsController.ChangeWeapon();
         }
     }
 }
