@@ -22,6 +22,8 @@ namespace FPS {
             _weapons[_currentWeapon % _weapons.Length].IsVisible = false;
             _currentWeapon++;
             _weapons[_currentWeapon % _weapons.Length].IsVisible = true;
+            //_weapons[_currentWeapon % _weapons.Length].gameObject.
+            //    _light = GameObject.Find("MagicArrowPrefab").GetComponent<Light>();
         }
 
         public void Fire()
@@ -39,7 +41,7 @@ namespace FPS {
         public void SetFireForce()
         {
             if (_weapons[_currentWeapon % _weapons.Length] != null)
-                _weapons[_currentWeapon % _weapons.Length].FirePressDownBtnTime = Time.time;
+                _weapons[_currentWeapon % _weapons.Length].FireBtnPressed(Time.time);
             
             //GetComponent<Animation>().Play("Fire1");
         }

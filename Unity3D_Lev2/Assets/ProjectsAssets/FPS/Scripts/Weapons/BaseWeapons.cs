@@ -14,15 +14,21 @@ namespace FPS
         protected float _reloadTime;
         [SerializeField]
         protected float _timeout;
+        //но не совсем правильно, т.к. стрелы д.б. в калчане(обойме)
+        [SerializeField]
+        public int CartridgeHolder;
+        [SerializeField]
+        public int MaxCartridgeHolder;
 
         protected float _lastShootTime;
 
         //public - видимо не правильно, но куда его запихнуть - не понятно
-        public float FirePressDownBtnTime;
+        private float _timeFirePressedDownBtn;
 
-        //но не совсем правильно, т.к. стрелы д.б. в калчане(обойме)
-        [SerializeField]
-        public int CartridgeHolder;
+        public void FireBtnPressed(float time)
+        {
+            _timeFirePressedDownBtn = time;
+        }
 
         public bool TryShoot()
         {
@@ -31,7 +37,7 @@ namespace FPS
 
             //усилили силу, но для огнестрела не пойдёт.
             var oldForce = _force;
-            _force *= Mathf.Min(5, Time.time - FirePressDownBtnTime)*10;
+            _force *= Mathf.Min(2, Time.time - _timeFirePressedDownBtn) *10;
 
             Fire();
 

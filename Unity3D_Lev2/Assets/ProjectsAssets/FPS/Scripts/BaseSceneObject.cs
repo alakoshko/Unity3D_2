@@ -216,7 +216,7 @@ namespace FPS
         private void AskColor(Transform obj, Color color)
         {
             // Реализовать по аналогии с AskLayer
-            //obj.gameObject.color = color;       // Выставляем объекту цвет
+            //obj.color = color;       // Выставляем объекту цвет
             //if (obj.childCount > 0)
             //{
             //    foreach (Transform d in obj) // Проходит по всем вложенным объектам

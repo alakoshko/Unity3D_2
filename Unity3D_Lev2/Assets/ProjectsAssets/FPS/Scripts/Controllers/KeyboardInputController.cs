@@ -16,8 +16,11 @@ namespace FPS
             if (Input.GetButtonUp("Fire1"))
                 Main.Instance.WeaponsController.Fire();
 
-            if (Input.GetButtonDown("ChangeWeapon"))
+            if (Input.GetButtonDown("ChangeWeapon") )
                 Main.Instance.WeaponsController.ChangeWeapon();
+
+            if (Input.GetButtonDown("ReloadCartridge"))
+                Main.Instance.WeaponsController.ReloadCartridge();
         }
     }
 }

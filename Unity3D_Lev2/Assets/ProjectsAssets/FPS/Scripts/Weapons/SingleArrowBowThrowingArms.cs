@@ -8,12 +8,6 @@ namespace FPS
     {
         [SerializeField]
         private Transform _firepoint;
-        private int _etalonCartridge;
-
-        private SingleArrowBowThrowingArms()
-        {
-            _etalonCartridge = CartridgeHolder;
-        }
 
         protected override void Fire()
         {
@@ -29,7 +23,7 @@ namespace FPS
 
         public override void Reload()
         {
-            CartridgeHolder = _etalonCartridge;
+            CartridgeHolder = MaxCartridgeHolder;
         }
     }
 }
