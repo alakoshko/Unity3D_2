@@ -17,16 +17,12 @@ namespace FPS
 
         protected float _lastShootTime;
 
+        //public - видимо не правильно, но куда его запихнуть - не понятно
         public float FirePressDownBtnTime;
 
-        //public bool TryShootChangeForce()
-        //{
-        //    if (Time.time - _lastShootTime < _timeout) return false;
-        //    _lastShootTime = Time.time;
-
-        //    Fire();
-        //    return true;
-        //}
+        //но не совсем правильно, т.к. стрелы д.б. в калчане(обойме)
+        [SerializeField]
+        public int CartridgeHolder;
 
         public bool TryShoot()
         {

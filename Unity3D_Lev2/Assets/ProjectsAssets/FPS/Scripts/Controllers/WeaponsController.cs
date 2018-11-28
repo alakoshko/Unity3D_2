@@ -30,10 +30,18 @@ namespace FPS {
                 _weapons[_currentWeapon % _weapons.Length].TryShoot();
         }
 
+        public void ReloadCartridge()
+        {
+            if (_weapons[_currentWeapon % _weapons.Length] != null)
+                _weapons[_currentWeapon % _weapons.Length].Reload();
+        }
+
         public void SetFireForce()
         {
             if (_weapons[_currentWeapon % _weapons.Length] != null)
                 _weapons[_currentWeapon % _weapons.Length].FirePressDownBtnTime = Time.time;
+            
+            //GetComponent<Animation>().Play("Fire1");
         }
     }
 }

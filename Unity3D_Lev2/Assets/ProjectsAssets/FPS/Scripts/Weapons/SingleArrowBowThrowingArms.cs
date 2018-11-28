@@ -8,16 +8,28 @@ namespace FPS
     {
         [SerializeField]
         private Transform _firepoint;
+        private int _etalonCartridge;
+
+        private SingleArrowBowThrowingArms()
+        {
+            _etalonCartridge = CartridgeHolder;
+        }
 
         protected override void Fire()
         {
             var arrow = Instantiate(_WeaponChargeItemPrefab);
-            arrow.Initialize(_firepoint, _force);
+            if (CartridgeHolder > 0)
+            {
+                arrow.Initialize(_firepoint, _force);
+                //GetComponent<Animation>().Play("Fire1");
+                CartridgeHolder -= 1;
+            }
+
         }
 
         public override void Reload()
         {
-            throw new System.NotImplementedException();
+            CartridgeHolder = _etalonCartridge;
         }
     }
 }

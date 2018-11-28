@@ -21,6 +21,7 @@ namespace FPS
             transform.position = firepoint.position;
             transform.rotation = firepoint.rotation;
             _speed = force;
+            gameObject.SetActive(true);
         }
 
         private void FixedUpdate()

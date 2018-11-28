@@ -6,6 +6,8 @@ namespace FPS
 {
     public abstract class BaseAmmo : BaseSceneObject
     {
-        public abstract void Initialize(Transform firepoint, float force);   
+        
+
+        public abstract void Initialize(Transform firepoint, float force);
     }
 }
