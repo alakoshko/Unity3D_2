@@ -169,6 +169,7 @@
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Main.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Models\FlashLightModel.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Models\PlayerModel.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\NonConvexMeshCollider.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\ObjectsPool.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Views\FlashLightChargeView.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Views\FlashLightView.cs" />
