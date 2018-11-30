@@ -14,14 +14,25 @@ namespace FPS
         private float _speed;
         private bool _isHitted;
 
+        [SerializeField]
+        private string _poolId;
+        public override string PoolID => _poolId;
+
+        [SerializeField]
+        private int _objectCount;
+        public override int ObjectsCount => _objectCount;
+
         public override void Initialize(Transform firepoint, float force)
         {
-            Destroy(gameObject, _destroyTime);
+            //Destroy(gameObject, _destroyTime);
+            CancelInvoke();
+            Invoke("Disable", _destroyTime);
 
             transform.position = firepoint.position;
             transform.rotation = firepoint.rotation;
             _speed = force;
             gameObject.SetActive(true);
+            _isHitted = false;
         }
 
         private void FixedUpdate()
@@ -37,14 +48,18 @@ namespace FPS
                 _isHitted = true;
                 transform.position = hit.point;
 
-                //Наносим урон
+                var dHealth = hit.collider.GetComponent<IDamageable>();
+                if (dHealth != null) dHealth.ApplyDamage(_damage);
+                
 
-                Destroy(gameObject, 1f);
+                //Destroy(gameObject, 1f);
+                Invoke("Disable", 1f);
             }
             else
             {
                 transform.position = finalPos;
             }
         }
+
     }
 }

@@ -11,13 +11,13 @@ namespace FPS
 
         protected override void Fire()
         {
-            var arrow = Instantiate(_WeaponChargeItemPrefab);
-            if (CartridgeHolder > 0)
-            {
+            //var arrow = Instantiate(_WeaponChargeItemPrefab);
+            
+                BaseAmmo arrow = ObjectsPool.Instance.GetObject(_WeaponChargeItemId) as BaseAmmo;
                 arrow.Initialize(_firepoint, _force);
                 //GetComponent<Animation>().Play("Fire1");
                 CartridgeHolder -= 1;
-            }
+            
 
         }
 

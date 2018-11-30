@@ -19,7 +19,7 @@ namespace FPS
 
             foreach(var arrowFP in _firepoint)
             {
-                var arrow = Instantiate(_WeaponChargeItemPrefab);
+                BaseAmmo arrow = ObjectsPool.Instance.GetObject(_WeaponChargeItemId) as BaseAmmo;
                 if (CartridgeHolder > 0)
                 {
                     arrow.Initialize(arrowFP, _force);

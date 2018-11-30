@@ -7,7 +7,7 @@ namespace FPS
     public abstract class BaseWeapons : BaseSceneObject
     {
         [SerializeField]
-        protected BaseAmmo _WeaponChargeItemPrefab;
+        protected string _WeaponChargeItemId;
         [SerializeField]
         protected float _force;
         [SerializeField]
@@ -23,21 +23,25 @@ namespace FPS
         protected float _lastShootTime;
 
         //public - видимо не правильно, но куда его запихнуть - не понятно
-        private float _timeFirePressedDownBtn;
+        private float _fireForce;
 
-        public void FireBtnPressed(float time)
+        public float FireForce
         {
-            _timeFirePressedDownBtn = time;
+            get { return _fireForce; }
+            set { _fireForce = value; }
         }
 
         public bool TryShoot()
         {
+            if (CartridgeHolder <= 0) return false;
             if (Time.time - _lastShootTime < _timeout) return false;
+
             _lastShootTime = Time.time;
 
             //усилили силу, но для огнестрела не пойдёт.
             var oldForce = _force;
-            _force *= Mathf.Min(2, Time.time - _timeFirePressedDownBtn) *10;
+            _force *= Mathf.Min(10, Mathf.Abs(_fireForce)*10);
+            Debug.Log($"force: {_force}");
 
             Fire();
 

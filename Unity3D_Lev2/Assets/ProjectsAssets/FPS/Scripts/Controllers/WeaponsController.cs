@@ -32,6 +32,12 @@ namespace FPS {
                 _weapons[_currentWeapon % _weapons.Length].TryShoot();
         }
 
+        internal void SetFireForceFromMSW(float mswValue)
+        {
+            if (_weapons[_currentWeapon % _weapons.Length] != null)
+                _weapons[_currentWeapon % _weapons.Length].FireForce = mswValue;
+        }
+
         public void ReloadCartridge()
         {
             if (_weapons[_currentWeapon % _weapons.Length] != null)
@@ -41,7 +47,7 @@ namespace FPS {
         public void SetFireForce()
         {
             if (_weapons[_currentWeapon % _weapons.Length] != null)
-                _weapons[_currentWeapon % _weapons.Length].FireBtnPressed(Time.time);
+                _weapons[_currentWeapon % _weapons.Length].FireForce = Time.time;
             
             //GetComponent<Animation>().Play("Fire1");
         }
