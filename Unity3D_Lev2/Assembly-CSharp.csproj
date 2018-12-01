@@ -196,7 +196,7 @@
      <None Include="Assets\Imported\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Imported\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\ProjectsAssets\models\Characters\Knight\shaders\doublesidedshader.shader" />
-     <None Include="Assets\Imported\Mega Fantasy Props Pack\README.txt" />
+     <None Include="Assets\ProjectsAssets\models\Mega Fantasy Props Pack\README.txt" />
      <None Include="Assets\Imported\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Imported\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
      <None Include="Assets\Imported\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
