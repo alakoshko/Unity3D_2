@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 54448165377630034}
   - component: {fileID: 82017329239183916}
   - component: {fileID: 114044016241753426}
+  - component: {fileID: 65980413729428118}
   m_Layer: 0
   m_Name: MagicArrowPrefab
   m_TagString: Untagged
@@ -414,6 +415,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65980413729428118
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1303010346667730}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &82017329239183916
 AudioSource:
   m_ObjectHideFlags: 1
