@@ -25,6 +25,9 @@ namespace FPS
             if (Input.GetButtonDown("TeammateMoveCommand"))
                 Main.Instance.TeammateController.MoveCommand();
 
+            if (Input.GetButtonDown("TeammateFollowPlayerCommand"))
+                Main.Instance.TeammateController.FollowPlayerCommand();
+
             #region do a Fire
             //Set force of fire
 

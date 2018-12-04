@@ -26,6 +26,11 @@ namespace FPS
             }
         }
 
+        public void FollowPlayerCommand()
+        {
+            if (_currentTeammate) _currentTeammate.SwitchFollow();
+        }
+
         public void SetPathCommand()
         {
             RaycastHit hit;

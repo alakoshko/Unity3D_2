@@ -6,12 +6,12 @@ namespace FPS
 {
     public class CastleDoorController : BaseController
     {
-        private CastleDoorModel _model;
+        private CastleDoorModel _modelObject;
 
         private void Awake()
         {
-            _model = FindObjectOfType<CastleDoorModel>();
-            _model.Open(false);
+            _modelObject = FindObjectOfType<CastleDoorModel>();
+            _modelObject.Open(false);
         }
 
         private void Update()
@@ -21,8 +21,18 @@ namespace FPS
 
         public void CastleDoorSwitch()
         {
-            if (_model.enabled) _model.Open(true);
-            else _model.Open(false);
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                CastleDoorModel castleDoor = hit.collider.GetComponent<CastleDoorModel>();
+                if (castleDoor)
+                    if (_modelObject.enabled) _modelObject.Open(true);
+                    else _modelObject.Open(false);
+            }
+
+            
         }
     }
 }

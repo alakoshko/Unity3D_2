@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 114122247777696900}
   - component: {fileID: 114481339348022176}
   m_Layer: 2
-  m_Name: Teammate02
+  m_Name: Teammate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
