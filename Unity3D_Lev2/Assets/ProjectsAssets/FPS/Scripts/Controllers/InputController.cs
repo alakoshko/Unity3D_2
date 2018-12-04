@@ -21,8 +21,9 @@ namespace FPS
 
             if (Input.GetMouseButtonDown(1))
                 Main.Instance.CastleDoorController.CastleDoorSwitch();
-            
 
+            if (Input.GetButtonDown("TeammateMoveCommand"))
+                Main.Instance.TeammateController.MoveCommand();
 
             #region do a Fire
             //Set force of fire

@@ -12,6 +12,7 @@ namespace FPS
         public FlashLightController FlashLightController { get; private set; }
         public WeaponsController WeaponsController { get; private set; }
         public CastleDoorController CastleDoorController { get; private set; }
+        public TeammateController TeammateController { get; private set; }
 
         private void Awake()
         {
@@ -28,6 +29,7 @@ namespace FPS
             FlashLightController = gameObject.AddComponent<FlashLightController>();
             WeaponsController = gameObject.AddComponent<WeaponsController>();
             CastleDoorController = gameObject.AddComponent<CastleDoorController>();
+            TeammateController = gameObject.AddComponent<TeammateController>();
         }
 
         // Update is called once per frame
