@@ -23,6 +23,11 @@ namespace FPS
             OnFlashLightStateChanged(false);
         }
 
+        private void OnDestroy()
+        {
+            _flashLightModel.FlashLightStateChanged -= OnFlashLightStateChanged;
+        }
+
         private void OnFlashLightStateChanged(bool state)
         {
             _image.color = state ? _onColor : _offColor;
