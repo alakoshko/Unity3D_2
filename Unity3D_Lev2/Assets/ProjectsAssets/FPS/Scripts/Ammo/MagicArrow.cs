@@ -50,7 +50,7 @@ namespace FPS
 
                 var dHealth = hit.collider.GetComponent<IDamageable>();
                 if (dHealth != null) dHealth.ApplyDamage(_damage);
-                
+
 
                 //Destroy(gameObject, 1f);
                 Invoke("Disable", 1f);
@@ -60,6 +60,5 @@ namespace FPS
                 transform.position = finalPos;
             }
         }
-
     }
 }

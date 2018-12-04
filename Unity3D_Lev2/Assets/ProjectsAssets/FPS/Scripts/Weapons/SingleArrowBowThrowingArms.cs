@@ -13,12 +13,10 @@ namespace FPS
         {
             //var arrow = Instantiate(_WeaponChargeItemPrefab);
             
-                BaseAmmo arrow = ObjectsPool.Instance.GetObject(_WeaponChargeItemId) as BaseAmmo;
-                arrow.Initialize(_firepoint, _force);
-                //GetComponent<Animation>().Play("Fire1");
-                CartridgeHolder -= 1;
-            
-
+            BaseAmmo arrow = ObjectsPool.Instance.GetObject(_WeaponChargeItemId) as BaseAmmo;
+            arrow.Initialize(_firepoint, _force);
+            //GetComponent<Animation>().Play("Fire1");
+            CartridgeHolder -= 1;
         }
 
         public override void Reload()

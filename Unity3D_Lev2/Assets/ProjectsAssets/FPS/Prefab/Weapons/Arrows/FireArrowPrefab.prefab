@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114152408752190846}
   - component: {fileID: 54643154514034512}
   - component: {fileID: 82192246212447390}
+  - component: {fileID: 65061898708359508}
   m_Layer: 0
   m_Name: FireArrowPrefab
   m_TagString: Untagged
@@ -424,6 +425,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65061898708359508
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213725155524562}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03559997, y: 0.0354898, z: 0.9551642}
+  m_Center: {x: 6.676381e-19, y: -0.000054092143, z: 0.0015102476}
 --- !u!82 &82192246212447390
 AudioSource:
   m_ObjectHideFlags: 1
