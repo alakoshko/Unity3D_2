@@ -2,15 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBot : MonoBehaviour {
+namespace FPS
+{
+    //public class EnemyBot : BaseSceneObject, IDamageable
+    //{
+    //    public float MaxHealth
+    //    {
+    //        get
+    //        {
+    //            //throw new System.NotImplementedException();
+    //        }
+    //    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    //    public float CurrentHealth => MaxHealth;
+
+    //    public void ApplyDamage(float damage)
+    //    {
+    //        throw new System.NotImplementedException();
+    //    }
+    //}
 }

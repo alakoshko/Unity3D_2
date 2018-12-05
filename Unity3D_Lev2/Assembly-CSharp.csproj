@@ -181,7 +181,9 @@
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Views\FlashLightChargeView.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Views\FlashLightView.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Views\TeammateView.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\WayPoint.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Weapons\BaseWeapons.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Weapons\FlamethrowerWeapon.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Weapons\MultiArrowsBowThrowingArms.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Weapons\SingleArrowBowThrowingArms.cs" />
      <Compile Include="Assets\ProjectsAssets\models\Characters\Knight\scripts\rotator.cs" />
