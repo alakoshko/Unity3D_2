@@ -163,9 +163,11 @@
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Buildings\BaseDoor.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Characters\Character.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Characters\EnemyBot.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Characters\FlyingCharacterAi.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\BaseController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\CastleDoorController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\FlashLightController.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\FlyingCharacterController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\InputController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\TeammateController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\WeaponsController.cs" />

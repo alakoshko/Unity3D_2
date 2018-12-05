@@ -79,7 +79,8 @@ namespace FPS
                 {
                     if (IsTargetSeen())
                     {
-                        _agent.SetDestination(_targetTransform.position);
+                        //Fly to _targetTranform
+                        //_agent.SetDestination(_targetTransform.position);
                         if (_weapon)
                         {
                             _weapon.TryShoot();
@@ -91,7 +92,8 @@ namespace FPS
                 {
                     if (IsTargetSeen())
                     {
-                        _agent.SetDestination(_targetTransform.position);
+                        //Fly to _targetTranform
+                        //_agent.SetDestination(_targetTransform.position);
                         m_Animator?.Play(_animatorMove);
                     }
                 }
@@ -107,10 +109,11 @@ namespace FPS
             if (UseRandomWP)
             {
                 //задаем цель 
-                _agent.SetDestination(_randomPos);
+                //_agent.SetDestination(_randomPos);
+
                 //дошел ли до позиции наш бот
-                if (!_agent.hasPath || _agent.remainingDistance >= MaxRandomWPRaius * 2)
-                    _randomPos = GenerateRandomWP();
+                //if (!_agent.hasPath || _agent.remainingDistance >= MaxRandomWPRaius * 2)
+                //    _randomPos = GenerateRandomWP();
 
             }
         }
@@ -154,10 +157,13 @@ namespace FPS
         {
             if (CurrentHealth <= 0) return;
             _currentHealth -= damage;
-            //m_Animator?.Play(_animatorDamage);
-            m_Animator.SetBool(_animatorDamage, true);
-            m_Animator.SetBool(_animatorWait, true);
-            
+            //m_Animator?.SetBool(_animatorWait, false);
+            m_Animator?.Play(_animatorDamage);
+            //m_Animator?.SetBool(_animatorWait, true);
+            //m_Animator.StartPlayback();
+
+
+
             //Опять не запускает анимацию, почему?
             //m_Animator?.Play(_animatorWait);
 
