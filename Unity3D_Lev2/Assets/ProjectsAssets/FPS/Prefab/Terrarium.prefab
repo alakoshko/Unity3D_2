@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1656703080236102}
+  m_IsPrefabAsset: 1
+--- !u!1 &1656703080236102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4097573597256284}
+  - component: {fileID: 114081634694789010}
+  m_Layer: 0
+  m_Name: Terrarium
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4097573597256284
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1656703080236102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -69, y: 23.4, z: -12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114081634694789010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1656703080236102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5564f499341508a43819ce17743cd92b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _childPrefab: {fileID: 114334216167438622, guid: c6150f3152170b24d925a30f6cad4082,
+    type: 2}
+  _childAmount: 4
+  _slowSpawn: 0
+  _spawnSphere: 230.4
+  _spawnSphereHeight: 36.7
+  _spawnSphereDepth: 203.8
+  _minSpeed: 5
+  _maxSpeed: 10
+  _minScale: 0.7
+  _maxScale: 1
+  _soarFrequency: 0
+  _soarAnimation: Dragon_Wait
+  _flapAnimation: Dragon_Move
+  _idleAnimation: Dragon_Wait
+  _deadAnimation: Dragon_Dead
+  _damageAnimation: Dragon_Damage
+  _attackAnimation: Dragon_Attack
+  _diveValue: 4
+  _diveFrequency: 0.7
+  _minDamping: 1
+  _maxDamping: 2
+  _waypointDistance: 5.21
+  _minAnimationSpeed: 0.8
+  _maxAnimationSpeed: 1.2
+  _randomPositionTimer: 0
+  _positionSphere: 0
+  _positionSphereHeight: 0
+  _positionSphereDepth: 0
+  _childTriggerPos: 0
+  _forceChildWaypoints: 0
+  _forcedRandomDelay: 2
+  _flatFly: 1
+  _flatSoar: 1
+  _birdAvoid: 0
+  _birdAvoidHorizontalForce: 1000
+  _birdAvoidDown: 0
+  _birdAvoidUp: 0
+  _birdAvoidVerticalForce: 300
+  _birdAvoidDistanceMax: 4.5
+  _birdAvoidDistanceMin: 5
+  _soarMaxTime: 0
+  _avoidanceMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  _roamers: []
+  _posBuffer: {x: 58.300003, y: 67.12, z: 33.7}
+  _updateDivisor: 1
+  _newDelta: 0
+  _updateCounter: 0
+  _activeChildren: 0
+  _groupChildToNewTransform: 0
+  _groupTransform: {fileID: 0}
+  _groupName: 
+  _groupChildToFlock: 1
+  _startPosOffset: {x: 0, y: 0, z: 0}
+  _thisT: {fileID: 4097573597256284}

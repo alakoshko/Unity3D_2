@@ -68,9 +68,12 @@ namespace FPS
         public float _minScale = .7f;               // minimum random size
         public float _maxScale = 1.0f;              // maximum random size
         public float _soarFrequency = 0.0f;         // How often soar is initiated 1 = always 0 = never
-        public string _soarAnimation = "Soar";      // Animation -required- for soar functionality
-        public string _flapAnimation = "Flap";      // Animation used for flapping
-        public string _idleAnimation = "Idle";      // Animation -required- for sitting idle functionality
+        public string _soarAnimation = "Dragon_Wait";      // Animation -required- for soar functionality
+        public string _flapAnimation = "Dragon_Move";      // Animation used for flapping
+        public string _idleAnimation = "Dragon_Wait";      // Animation -required- for sitting idle functionality
+        public string _deadAnimation = "Dragon_Dead";      // Animation - dead
+        public string _damageAnimation = "Dragon_Damage";      // Animation - Damage
+        public string _attackAnimation = "Dragon_Attack";      // Animation - Attack
         public float _diveValue = 7.0f;             // Dive depth
         public float _diveFrequency = 0.5f;         // How often dive 1 = always 0 = never
         public float _minDamping = 1.0f;                // Rotation tween damping, lower number = smooth/slow rotation (if this get stuck in a loop, increase this value)
@@ -164,6 +167,12 @@ namespace FPS
                 _roamers.RemoveAt(_roamers.Count - 1);
                 Destroy(dObj.gameObject);
             }
+        }
+
+        public void DieChild(FlockChild flockChild)
+        {
+            _roamers.Remove(flockChild);
+            Destroy(flockChild.gameObject);
         }
 
         public void Update()

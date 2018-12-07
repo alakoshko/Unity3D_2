@@ -11,7 +11,7 @@ using Random = UnityEngine.Random;
 
 namespace FPS
 {
-    public class FlockChild : MonoBehaviour
+    public class FlockChild : MonoBehaviour, IDamageable
     {
         [HideInInspector]
         public FlockController _spawner;            //Reference to the flock controller that spawned this bird
@@ -72,6 +72,7 @@ namespace FPS
         public void Awake()
         {
             m_Animator = GetComponent<Animator>();
+            _currentHealth = MaxHealth;
         }
 
         public void Update()
@@ -139,7 +140,7 @@ namespace FPS
             _avoidValue = UnityEngine.Random.Range(.3f, .1f);
             if (_spawner._birdAvoidDistanceMax != _spawner._birdAvoidDistanceMin)
             {
-                _avoidDistance = UnityEngine.Random.Range(_spawner._birdAvoidDistanceMax, _spawner._birdAvoidDistanceMin);
+                _avoidDistance = Random.Range(_spawner._birdAvoidDistanceMax, _spawner._birdAvoidDistanceMin);
                 return;
             }
             _avoidDistance = _spawner._birdAvoidDistanceMin;
@@ -378,5 +379,54 @@ namespace FPS
                 }
             //}
         }
+
+        #region IDamageable implementation
+        [SerializeField]
+        private float _maxHealth;
+        public float MaxHealth => _maxHealth;
+
+        private float _currentHealth;
+        public float CurrentHealth => _currentHealth;
+
+
+        public void ApplyDamage(float damage)
+        {
+            if (CurrentHealth <= 0) return;
+            _currentHealth -= damage;
+            m_Animator.Play(_spawner._damageAnimation);
+
+
+
+            Debug.Log($"Dragon current health: {_currentHealth}");
+
+            if (CurrentHealth <= 0) Die();
+        }
+
+        //ѕока вз€л как есть
+        //TODO: прикрутить наследование от BaseSceneObject
+        protected Collider _collider;
+        public Collider Collider
+        {
+            get
+            {
+                if (!_collider) _collider = GetComponent<Collider>();
+                return _collider;
+            }
+        }
+
+        public void Die()
+        {
+            Collider.enabled = false;
+            var rb = GetComponent<Transform>().gameObject.AddComponent<Rigidbody>();
+            rb.useGravity = true;
+            rb.mass = _maxHealth / 2;
+            //rb.AddForce(Vector3.up * Random.Range(10f, 30f), ForceMode.Impulse);
+
+            m_Animator?.Play(_spawner._deadAnimation);
+
+            _spawner.DieChild(this);
+            //Destroy(gameObject, 5f);
+        }
+        #endregion
     }
 }
