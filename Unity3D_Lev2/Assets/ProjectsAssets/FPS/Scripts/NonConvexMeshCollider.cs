@@ -286,7 +286,7 @@ namespace FPS
                 foreach (var child in new[] { this, other })
                     child.Parent = b;
                 b.Children = new[] { this, other };
-                Box temp = b;
+                //Box temp = b;
             }
 
             public Box Parent { get; set; }

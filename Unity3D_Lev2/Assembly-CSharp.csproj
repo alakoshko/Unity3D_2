@@ -53,6 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Imported\FlySamples\Birds\Bird Flocks\Scripts\Addons\UnluckDistanceDisabler.cs" />
+     <Compile Include="Assets\Imported\FlySamples\Birds\Bird Flocks\Scripts\Demo\SmoothCameraOrbit.cs" />
      <Compile Include="Assets\Imported\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\Imported\SampleScenes\Menu\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Imported\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -171,6 +173,13 @@
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\InputController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\TeammateController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\WeaponsController.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Flock\FlockChild.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Flock\FlockChildSound.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Flock\FlockController.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Flock\FlockWaypointTrigger.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Flock\LandingButtons.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Flock\LandingSpot.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Flock\LandingSpotController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Interfaces\IDamageable.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Interfaces\IPoolable.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Main.cs" />
@@ -199,6 +208,7 @@
      <None Include="Assets\Imported\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
      <None Include="Assets\Imported\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Imported\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
+     <None Include="Assets\Imported\FlySamples\Birds\Bird Flocks\Scripts\C# Scripts\- IMPORTANT - Version Change Readme.txt" />
      <None Include="Assets\Imported\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
      <None Include="Assets\Imported\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Imported\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />

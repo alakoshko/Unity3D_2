@@ -40,7 +40,7 @@ namespace FPS
 
 
         // setup script properties
-        private void Awake()
+        protected override void Awake()
         {
             // get the reference to the aeroplane controller, so we can send move input to it and read its current state.
             m_FlyingCharacterController = GetComponent<FlyingCharacterController>();
