@@ -104,18 +104,29 @@ namespace FPS
             }
 
             if (_seenTrgt) return;
-            
 
-            if (UseRandomWP)
-            {
-                //задаем цель 
-                //_agent.SetDestination(_randomPos);
 
-                //дошел ли до позиции наш бот
-                //if (!_agent.hasPath || _agent.remainingDistance >= MaxRandomWPRaius * 2)
-                //    _randomPos = GenerateRandomWP();
-
-            }
+            //if (UseRandomWP)
+            //{
+            //    _agent.SetDestionation(_randomPos);
+            //    if (!_agent.hasPath || _agent.remainingDistance >= MaxRandomWPRaius * 2)
+            //        _randomPos = GenerateRandomWP();
+            //}
+            //else
+            //{
+            //    if (_wapoints.Length <= 1) return;
+            //    _agent.SetDestionation(_waypoint[_currentWP].transform.position);
+            //    if (_agent.hasPath)
+            //    {
+            //        _currentWPTimeout += Time.deltaTime;
+            //        if (_currentWPTimeout >= _waypoints[_currentWP].WaitTime)
+            //        {
+            //            _currentWPTimeout = 0;
+            //            _current++;
+            //            if (_currentWP >= _waypoints.Lenght) _currentWP = 0;
+            //        }
+            //    }
+            //}
         }
 
         private Vector3 GenerateRandomWP()

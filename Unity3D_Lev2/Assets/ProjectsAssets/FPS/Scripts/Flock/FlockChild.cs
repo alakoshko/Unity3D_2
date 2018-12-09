@@ -48,6 +48,12 @@ namespace FPS
         public Transform _thisT;
 
         private Animator m_Animator;
+        private Transform _targetTransform;
+        private bool _seenTarget;
+        public float AttackDistance = 30f;
+        public float SearchDistance = 10f;
+
+        private void SetTarget(Transform target) => _targetTransform = target;
 
         public void Start()
         {
@@ -67,6 +73,9 @@ namespace FPS
                 this._updateSeed = _updateNextSeed;
                 _updateNextSeed = _updateNextSeed % _updateSeedCap;
             }
+            
+            //вызываем дракона на себя
+            SetTarget(PlayerModel.LocalPlayer.transform);
         }
 
         public void Awake()
@@ -77,13 +86,15 @@ namespace FPS
 
         public void Update()
         {
+            if (_currentHealth <= 0) return;
+
             //Skip frames
             if (_spawner._updateDivisor <= 1 || _spawner._updateCounter == _updateSeed)
             {
-                SoarTimeLimit();
+                //SoarTimeLimit();
                 CheckForDistanceToWaypoint();
                 RotationBasedOnWaypointOrAvoidance();
-                LimitRotationOfModel();
+                //LimitRotationOfModel();
 
             }
         }
@@ -123,7 +134,7 @@ namespace FPS
         {
             //foreach(AnimationState state in _model.GetComponent<Animation>()) {
             //{
-            //state.time = UnityEngine.Random.value * state.length;
+            //state.time = Random.value * state.length;
             //}
 
             m_Animator.playbackTime = Random.Range(0.0f, 1.0f) * m_Animator.GetCurrentAnimatorStateInfo(0).length;
@@ -137,7 +148,7 @@ namespace FPS
 
         public void InitAvoidanceValues()
         {
-            _avoidValue = UnityEngine.Random.Range(.3f, .1f);
+            _avoidValue = Random.Range(.3f, .1f);
             if (_spawner._birdAvoidDistanceMax != _spawner._birdAvoidDistanceMin)
             {
                 _avoidDistance = Random.Range(_spawner._birdAvoidDistanceMax, _spawner._birdAvoidDistanceMin);
@@ -148,7 +159,7 @@ namespace FPS
 
         public void SetRandomScale()
         {
-            float sc = UnityEngine.Random.Range(_spawner._minScale, _spawner._maxScale);
+            float sc = Random.Range(_spawner._minScale, _spawner._maxScale);
             _thisT.localScale = new Vector3(sc, sc, sc);
         }
 
@@ -189,6 +200,7 @@ namespace FPS
         public void RotationBasedOnWaypointOrAvoidance()
         {
             Vector3 lookit = _wayPoint - _thisT.position;
+            Debug.DrawLine(_wayPoint, _thisT.position);
             if (_targetSpeed > -1 && lookit != Vector3.zero)
             {
                 Quaternion rotation = Quaternion.LookRotation(lookit);
@@ -284,21 +296,44 @@ namespace FPS
         {
             if (!_landing)
             {
-                _damping = UnityEngine.Random.Range(_spawner._minDamping, _spawner._maxDamping);
-                _targetSpeed = UnityEngine.Random.Range(_spawner._minSpeed, _spawner._maxSpeed);
+                _damping = Random.Range(_spawner._minDamping, _spawner._maxDamping);
+                _targetSpeed = Random.Range(_spawner._minSpeed, _spawner._maxSpeed);
                 _lerpCounter = 0;
-                Invoke("SetRandomMode", delay);
+
+                //AI code from Lesson4
+                if (_targetTransform)
+                {
+                    float dist = Vector3.Distance(_thisT.transform.position, _targetTransform.position);
+                    if (dist < AttackDistance)
+                    {
+                        //Attack
+                    }
+                    else if (dist < SearchDistance)
+                    {
+                        //Follow
+                    }
+                    else
+                    {
+                        _seenTarget = false;
+                    }
+                }
+
+                if (_spawner.UseRandomWP)
+                {
+                    Invoke("SetRandomMode", delay);
+                }
             }
         }
 
         public void SetRandomMode()
         {
             CancelInvoke("SetRandomMode");
-            if (!_dived && UnityEngine.Random.value < _spawner._soarFrequency)
+            
+            if (!_dived && Random.value < _spawner._soarFrequency)
             {
                 Soar();
             }
-            else if (!_dived && UnityEngine.Random.value < _spawner._diveFrequency)
+            else if (!_dived && Random.value < _spawner._diveFrequency)
             {
                 Dive();
             }
@@ -323,9 +358,9 @@ namespace FPS
         public Vector3 findWaypoint()
         {
             Vector3 t = Vector3.zero;
-            t.x = UnityEngine.Random.Range(-_spawner._spawnSphere, _spawner._spawnSphere) + _spawner._posBuffer.x;
-            t.z = UnityEngine.Random.Range(-_spawner._spawnSphereDepth, _spawner._spawnSphereDepth) + _spawner._posBuffer.z;
-            t.y = UnityEngine.Random.Range(-_spawner._spawnSphereHeight, _spawner._spawnSphereHeight) + _spawner._posBuffer.y;
+            t.x = Random.Range(-_spawner._spawnSphere, _spawner._spawnSphere) + _spawner._posBuffer.x;
+            t.z = Random.Range(-_spawner._spawnSphereDepth, _spawner._spawnSphereDepth) + _spawner._posBuffer.z;
+            t.y = Random.Range(-_spawner._spawnSphereHeight, _spawner._spawnSphereHeight) + _spawner._posBuffer.y;
             return t;
         }
 
@@ -351,7 +386,7 @@ namespace FPS
 
                 if (_thisT.position.y < _wayPoint.y + 25)
                     m_Animator.speed = 0.1f;
-                //foreach (AnimationState state in m_Animator.speed)
+                //foreach (AnimationState state in _model.GetComponent<Animation>())
                 //{
                 //    if (_thisT.position.y < _wayPoint.y + 25)
                 //    {

@@ -51,6 +51,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 
 namespace FPS
 {
@@ -111,6 +112,7 @@ namespace FPS
         public bool _groupChildToFlock;         // Parents fish transform to school transform
         public Vector3 _startPosOffset;
         public Transform _thisT;
+        public bool UseRandomWP;
 
         public void Start()
         {
@@ -172,7 +174,7 @@ namespace FPS
         public void DieChild(FlockChild flockChild)
         {
             _roamers.Remove(flockChild);
-            Destroy(flockChild.gameObject);
+            Destroy(flockChild.gameObject, 10f);
         }
 
         public void Update()
@@ -248,22 +250,26 @@ namespace FPS
         public void SetFlockRandomPosition()
         {
             Vector3 t = Vector3.zero;
-            t.x = UnityEngine.Random.Range(-_positionSphere, _positionSphere) + _thisT.position.x;
-            t.z = UnityEngine.Random.Range(-_positionSphereDepth, _positionSphereDepth) + _thisT.position.z;
-            t.y = UnityEngine.Random.Range(-_positionSphereHeight, _positionSphereHeight) + _thisT.position.y;
-            //	var hit : RaycastHit;
-            //	if (Physics.Raycast(_posBuffer, t, hit, Vector3.Distance(_posBuffer, t))){
-            //			_posBuffer.LookAt(hit.point);
-            //			t = hit.point - (_thisT.forward*-3);
-            //	}
+            t.x = Random.Range(-_positionSphere, _positionSphere) + _thisT.position.x;
+            t.z = Random.Range(-_positionSphereDepth, _positionSphereDepth) + _thisT.position.z;
+            t.y = Random.Range(-_positionSphereHeight, _positionSphereHeight) + _thisT.position.y;
+            //RaycastHit hit;
+            ////if (Physics.Raycast(_posBuffer, t, hit, Vector3.Distance(_posBuffer, t)))
+            //if (Physics.Raycast(_posBuffer, t, out hit))
+            //{
+            //    _posBuffer.LookAt(hit.point);
+            //    t = hit.point - (_thisT.forward * -3);
+            //}
             _posBuffer = t;
             if (_forceChildWaypoints)
             {
                 for (int i = 0; i < _roamers.Count; i++)
                 {
-                    (_roamers[i]).Wander(UnityEngine.Random.value * _forcedRandomDelay);
+                    (_roamers[i]).Wander(Random.value * _forcedRandomDelay);
                 }
             }
+            //debug code
+            Debug.DrawLine(_thisT.position, _posBuffer, Color.blue);
         }
 
         //Instantly destroys all birds

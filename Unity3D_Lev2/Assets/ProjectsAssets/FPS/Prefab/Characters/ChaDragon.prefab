@@ -392,6 +392,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1426276587870472
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4225914616770110}
+  m_Layer: 0
+  m_Name: Eyes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1426524103443366
 GameObject:
   m_ObjectHideFlags: 1
@@ -1051,6 +1066,7 @@ Transform:
   - {fileID: 4498296071525010}
   - {fileID: 4409227520311460}
   - {fileID: 4816199102957294}
+  - {fileID: 4225914616770110}
   m_Father: {fileID: 4427922107211322}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 32.737762, y: -0.08849039, z: -0.048509065}
@@ -1124,6 +1140,19 @@ Transform:
   m_Father: {fileID: 4576702012509600}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 2.5101597, y: -167.19154, z: 0.13476087}
+--- !u!4 &4225914616770110
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1426276587870472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.185, z: 1.555}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4178260294762676}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4243380361645666
 Transform:
   m_ObjectHideFlags: 1
@@ -1891,7 +1920,11 @@ MonoBehaviour:
   _avoidDistance: 0
   _avoid: 1
   _thisT: {fileID: 4588736949622830}
-  _maxHealth: 1000
+  EyesTransform: {fileID: 4225914616770110}
+  SearchDistance: 30
+  AttackDistance: 10
+  MaxRandomWPRaius: 20
+  _maxHealth: 200
 --- !u!137 &137622493518252254
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

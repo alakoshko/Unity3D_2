@@ -108,3 +108,4 @@ MonoBehaviour:
   _groupChildToFlock: 1
   _startPosOffset: {x: 0, y: 0, z: 0}
   _thisT: {fileID: 4097573597256284}
+  UseRandomWP: 1
