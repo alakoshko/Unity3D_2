@@ -52,6 +52,8 @@ namespace FPS
         private bool _seenTarget;
         public float AttackDistance = 30f;
         public float SearchDistance = 10f;
+        public Transform EyesTransform;
+        private BaseWeapons _weaponFireBall;
 
         private void SetTarget(Transform target) => _targetTransform = target;
 
@@ -61,7 +63,10 @@ namespace FPS
             Wander(0.0f);
             SetRandomScale();
             _thisT.position = findWaypoint();
+
+            
             RandomizeStartAnimationFrame();
+
             InitAvoidanceValues();
             _speed = _spawner._minSpeed;
             _spawner._activeChildren++;
@@ -73,15 +78,22 @@ namespace FPS
                 this._updateSeed = _updateNextSeed;
                 _updateNextSeed = _updateNextSeed % _updateSeedCap;
             }
-            
-            //вызываем дракона на себя
+
+            //вызываем дракона на 
             SetTarget(PlayerModel.LocalPlayer.transform);
         }
 
         public void Awake()
         {
             m_Animator = GetComponent<Animator>();
+            //m_Animator.StartPlayback();
+
             _currentHealth = MaxHealth;
+            _weaponFireBall = GetComponentInChildren<BaseWeapons>();
+
+            //TODO: убрать после реализации позиционирования цели
+            //_seenTarget = false;
+            //TODO: убрать после реализации позиционирования цели
         }
 
         public void Update()
@@ -92,10 +104,13 @@ namespace FPS
             if (_spawner._updateDivisor <= 1 || _spawner._updateCounter == _updateSeed)
             {
                 //SoarTimeLimit();
+
+                #region Движение
                 CheckForDistanceToWaypoint();
                 RotationBasedOnWaypointOrAvoidance();
-                //LimitRotationOfModel();
+                #endregion
 
+                //LimitRotationOfModel();
             }
         }
 
@@ -110,6 +125,7 @@ namespace FPS
             if (_instantiated)
             {
                 _spawner._activeChildren++;
+
                 if (_landing)
                 {
                     //_model.GetComponent<Animation>().Play(_spawner._idleAnimation);
@@ -137,7 +153,10 @@ namespace FPS
             //state.time = Random.value * state.length;
             //}
 
+            //m_Animator.StartPlayback();
             m_Animator.playbackTime = Random.Range(0.0f, 1.0f) * m_Animator.GetCurrentAnimatorStateInfo(0).length;
+
+
             //float time;
             //RuntimeAnimatorController ac = m_Animator.runtimeAnimatorController;    //Get Animator controller
             //for (int i = 0; i < ac.animationClips.Length; i++)                 //For all animations
@@ -182,13 +201,16 @@ namespace FPS
 
         public void CheckForDistanceToWaypoint()
         {
+            //TODO: сделать поиск в каждом кадре Player.LocalPlayer, при нахождении идти только к нему.
             if (!_landing && (_thisT.position - _wayPoint).magnitude < _spawner._waypointDistance + _stuckCounter)
             {
                 Wander(0.0f);
+                SearchPlayer();
                 _stuckCounter = 0.0f;
             }
             else if (!_landing)
             {
+                SearchPlayer();
                 _stuckCounter += _spawner._newDelta;
             }
             else
@@ -292,6 +314,30 @@ namespace FPS
             }
         }
 
+        private void SearchPlayer()
+        {
+            //AIcode from Lesson4
+            if (_targetTransform)
+            {
+                float dist = Vector3.Distance(_thisT.transform.position, _targetTransform.position);
+                if (dist < AttackDistance)
+                {
+                    _seenTarget = IsTargetSeen();
+                    if (_seenTarget && _weaponFireBall)
+                        _weaponFireBall.TryShoot();
+
+                }
+                else if (dist < SearchDistance)
+                {
+                    _seenTarget = IsTargetSeen();
+                }
+                else
+                {
+                    _seenTarget = false;
+                }
+            }
+        }
+
         public void Wander(float delay)
         {
             if (!_landing)
@@ -300,29 +346,27 @@ namespace FPS
                 _targetSpeed = Random.Range(_spawner._minSpeed, _spawner._maxSpeed);
                 _lerpCounter = 0;
 
-                //AI code from Lesson4
-                if (_targetTransform)
-                {
-                    float dist = Vector3.Distance(_thisT.transform.position, _targetTransform.position);
-                    if (dist < AttackDistance)
-                    {
-                        //Attack
-                    }
-                    else if (dist < SearchDistance)
-                    {
-                        //Follow
-                    }
-                    else
-                    {
-                        _seenTarget = false;
-                    }
-                }
+               
 
+                //added AIcode from Lesson4
                 if (_spawner.UseRandomWP)
-                {
                     Invoke("SetRandomMode", delay);
+            }
+        }
+
+        private bool IsTargetSeen()
+        {
+            RaycastHit hit;
+            if (Physics.Linecast(EyesTransform.position, _targetTransform.position, out hit))
+            {
+                if (hit.transform == _targetTransform)
+                {
+                    Debug.DrawLine(EyesTransform.position, hit.point, Color.red);
+                    return true;
                 }
             }
+            Debug.DrawLine(EyesTransform.position, hit.point, Color.green);
+            return false;
         }
 
         public void SetRandomMode()
@@ -358,9 +402,14 @@ namespace FPS
         public Vector3 findWaypoint()
         {
             Vector3 t = Vector3.zero;
-            t.x = Random.Range(-_spawner._spawnSphere, _spawner._spawnSphere) + _spawner._posBuffer.x;
-            t.z = Random.Range(-_spawner._spawnSphereDepth, _spawner._spawnSphereDepth) + _spawner._posBuffer.z;
-            t.y = Random.Range(-_spawner._spawnSphereHeight, _spawner._spawnSphereHeight) + _spawner._posBuffer.y;
+            if (_seenTarget)
+                t = _targetTransform.position;
+            else
+            {
+                t.x = Random.Range(-_spawner._spawnSphere, _spawner._spawnSphere) + _spawner._posBuffer.x;
+                t.z = Random.Range(-_spawner._spawnSphereDepth, _spawner._spawnSphereDepth) + _spawner._posBuffer.z;
+                t.y = Random.Range(-_spawner._spawnSphereHeight, _spawner._spawnSphereHeight) + _spawner._posBuffer.y;
+            }
             return t;
         }
 
