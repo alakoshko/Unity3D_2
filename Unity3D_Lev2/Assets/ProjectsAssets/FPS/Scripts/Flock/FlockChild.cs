@@ -15,7 +15,8 @@ namespace FPS
     {
         [HideInInspector]
         public FlockController _spawner;            //Reference to the flock controller that spawned this bird
-        [HideInInspector]
+        //[HideInInspector]
+        public float _debugAttackDist;
         public Vector3 _wayPoint;               //Waypoint used to steer towards
         public float _speed;                        //Current speed of bird
         [HideInInspector]
@@ -53,6 +54,7 @@ namespace FPS
         public float AttackDistance = 30f;
         public float SearchDistance = 10f;
         public Transform EyesTransform;
+        [SerializeField]
         private BaseWeapons _weaponFireBall;
 
         private void SetTarget(Transform target) => _targetTransform = target;
@@ -320,6 +322,7 @@ namespace FPS
             if (_targetTransform)
             {
                 float dist = Vector3.Distance(_thisT.transform.position, _targetTransform.position);
+                _debugAttackDist = dist;
                 if (dist < AttackDistance)
                 {
                     _seenTarget = IsTargetSeen();
@@ -335,6 +338,15 @@ namespace FPS
                 {
                     _seenTarget = false;
                 }
+
+                if (_seenTarget)
+                {
+                    Debug.DrawLine(EyesTransform.position, _targetTransform.position, Color.red);
+                    _wayPoint = _targetTransform.position;
+                    //Invoke("SetPlayerAsTarget", delay);
+                }
+                else
+                    Debug.DrawLine(EyesTransform.position, _targetTransform.position, Color.green);
             }
         }
 
@@ -346,7 +358,6 @@ namespace FPS
                 _targetSpeed = Random.Range(_spawner._minSpeed, _spawner._maxSpeed);
                 _lerpCounter = 0;
 
-               
 
                 //added AIcode from Lesson4
                 if (_spawner.UseRandomWP)
@@ -359,13 +370,12 @@ namespace FPS
             RaycastHit hit;
             if (Physics.Linecast(EyesTransform.position, _targetTransform.position, out hit))
             {
+                Debug.DrawLine(EyesTransform.position, hit.point, Color.blue);
                 if (hit.transform == _targetTransform)
                 {
-                    Debug.DrawLine(EyesTransform.position, hit.point, Color.red);
                     return true;
                 }
             }
-            Debug.DrawLine(EyesTransform.position, hit.point, Color.green);
             return false;
         }
 

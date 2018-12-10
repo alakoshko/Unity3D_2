@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,6 +21,14 @@ namespace FPS
         [SerializeField]
         public int MaxCartridgeHolder;
 
+        private enum weaponsType
+        {
+            Throwing,
+            Firearms
+        };
+        [SerializeField]
+        private weaponsType _weaponsType;
+
         protected float _lastShootTime;
 
         //public - видимо не правильно, но куда его запихнуть - не понятно
@@ -38,14 +47,19 @@ namespace FPS
 
             _lastShootTime = Time.time;
 
-            //усилили силу, но для огнестрела не пойдёт.
-            var oldForce = _force;
-            _force *= Mathf.Min(10, Mathf.Abs(_fireForce)*10);
-            Debug.Log($"force: {_force}");
+            if (_weaponsType == weaponsType.Throwing)
+            {
+                //усилили силу, но для огнестрела не пойдёт.
+                var oldForce = _force;
+                _force *= Mathf.Min(10, Mathf.Abs(_fireForce) * 10);
+                Debug.Log($"force: {_force}");
 
-            Fire();
+                Fire();
 
-            _force = oldForce;
+                _force = oldForce;
+            }
+            else
+                Fire();
 
             return true;
         }

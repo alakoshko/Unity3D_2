@@ -3794,6 +3794,7 @@ MonoBehaviour:
   _timeout: 1
   CartridgeHolder: 10
   MaxCartridgeHolder: 5
+  _weaponsType: 0
   _firepoint:
   - {fileID: 4945930016781018}
 --- !u!114 &114306053902861974
@@ -3890,6 +3891,7 @@ MonoBehaviour:
   _timeout: 2
   CartridgeHolder: 6
   MaxCartridgeHolder: 8
+  _weaponsType: 0
   _firepoint:
   - {fileID: 4800487562325494}
   - {fileID: 4599137749798086}
