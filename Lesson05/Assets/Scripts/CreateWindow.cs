@@ -5,12 +5,6 @@ using System.Collections.Generic;
 
 namespace Maze.Editor
 {
-    public class MazePoint
-    {
-        public bool Visited = false; // если посещали точку
-        public GameObject[] gameObject = new GameObject[4]; //ссылка на объект- стену
-    }
-
     public class MazeWindow : EditorWindow
     {
         Material _material;
@@ -19,7 +13,6 @@ namespace Maze.Editor
         int _matrixSizeX;
         int _matrixSizeY;
         int matrixSize;
-        MazePoint[,] m1;
 
         Color[] _colors = new Color[]
         {
@@ -58,11 +51,17 @@ namespace Maze.Editor
             }
         }
 
-        
 
-        
+
+
 
         #region MyAlgoritm
+
+        public class MazePoint
+        {
+            public bool Visited = false; // если посещали точку
+            public GameObject[] gameObject = new GameObject[4]; //ссылка на объект- стену
+        }
         //    private void CreateMaze(GameObject root)
         //    {
         //        float x = 0;
