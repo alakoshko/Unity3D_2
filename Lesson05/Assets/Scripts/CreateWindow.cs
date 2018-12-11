@@ -13,13 +13,9 @@ namespace Maze.Editor
 
     public class MazeWindow : EditorWindow
     {
-        public GameObject ObjectInstantiate;
-        string _nameObject = "Wall";
+        Material _material;
         bool groupEnabled;
-        bool _randomColor = true;
-        int _countObject = 1;
-        float _radius = 10;
-        float boxSize = 5f;
+     
         int _matrixSizeX;
         int _matrixSizeY;
         int matrixSize;
@@ -41,29 +37,24 @@ namespace Maze.Editor
 
 
         void OnGUI()
-        {
-            // Здесь методы отрисовки схожи с методами в пользовательском интерфейсе, который вы разрабатывали на курсе “Unity3D. Уровень 1”
+        { 
             GUILayout.Label("Базовые настройки", EditorStyles.boldLabel);
-            ObjectInstantiate =
-                EditorGUILayout.ObjectField("Объект который хотим вставить", ObjectInstantiate, typeof(GameObject), true)
-                    as GameObject;
-            _nameObject = EditorGUILayout.TextField("Имя объекта", _nameObject);
-            groupEnabled = EditorGUILayout.BeginToggleGroup("Дополнительные настройки", groupEnabled);
+            
+            _material = (Material)EditorGUILayout.ObjectField("Материал", _material, typeof(Material), true);
+            //groupEnabled = EditorGUILayout.BeginToggleGroup("Дополнительные настройки", groupEnabled);
 
             _matrixSizeX = EditorGUILayout.IntSlider("Размер матрицы, длина", _matrixSizeX, 3, 10);
             _matrixSizeY = EditorGUILayout.IntSlider("Размер матрицы, ширина", _matrixSizeY, 3, 10);
             matrixSize = _matrixSizeX * _matrixSizeY;
 
-            EditorGUILayout.EndToggleGroup();
-            if (GUILayout.Button("Создать объекты"))
+            //EditorGUILayout.EndToggleGroup();
+
+            if (GUILayout.Button("Создать лабиринт"))
             {
-                if (ObjectInstantiate)
-                {
-                    #region from https://habr.com/post/335974/
-                    MazeVisualizer mazeVisualizer = new MazeVisualizer();
-                    mazeVisualizer.RefreshMaze(_matrixSizeX, _matrixSizeY);
-                    #endregion
-                }
+                #region from https://habr.com/post/335974/
+                MazeVisualizer mazeVisualizer = new MazeVisualizer();
+                mazeVisualizer.RefreshMaze(_matrixSizeX, _matrixSizeY, _material);
+                #endregion   
             }
         }
 

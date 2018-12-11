@@ -33,10 +33,11 @@ namespace Maze.Editor
         private bool _IsDrawGizmos;
         private W4Maze _Maze;
         private MazeGraph _GraphMaze;
-        public void RefreshMaze(int sizeX, int sizeY )
+        public void RefreshMaze(int sizeX, int sizeY, Material material )
         {
             _MazeCellsX = sizeX;
             _MazeCellsY = sizeY;
+            _Material = material;
 
             //Preprocess
             var generator = new EllerGenerator();

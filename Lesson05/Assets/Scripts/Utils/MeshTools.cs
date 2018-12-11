@@ -8,6 +8,11 @@ namespace Nox7atra.Utils
 {
     public static class MeshTools
     {
+        static Color[] _colors = new Color[]
+        {
+            Color.green, Color.black, Color.blue, Color.clear, Color.cyan, Color.red, Color.yellow, Color.white,Color.red
+        };
+
         public static Mesh CreatePlaneMesh(
                     float width,
                     float height,
@@ -46,6 +51,15 @@ namespace Nox7atra.Utils
             MeshFilter mf = meshObj.AddComponent<MeshFilter>();
             MeshRenderer mr = meshObj.AddComponent<MeshRenderer>();
             mr.material = mat;
+
+            //Раскрасили материалами
+            int nColor = Random.Range(0, _colors.Length - 1);
+            if (meshObj.GetComponent<Renderer>())
+            {
+                meshObj.GetComponent<Renderer>().material.color = _colors[nColor];
+            }
+            //Раскрасили материалами
+
             meshObj.name = name;
             return mf;
         }
