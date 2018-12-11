@@ -1,12 +1,10 @@
-﻿using Nox7atra.Mazes;
-using Nox7atra.Mazes.Generators;
-using Nox7atra.Mazes.PostProcess;
-using Nox7atra.Utils;
+﻿using Nox7atra.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-namespace Nox7atra.Mazes
+
+namespace Maze.Editor
 {
     public class MazeVisualizer : MonoBehaviour
     {
@@ -35,8 +33,11 @@ namespace Nox7atra.Mazes
         private bool _IsDrawGizmos;
         private W4Maze _Maze;
         private MazeGraph _GraphMaze;
-        public void RefreshMaze()
+        public void RefreshMaze(int sizeX, int sizeY )
         {
+            _MazeCellsX = sizeX;
+            _MazeCellsY = sizeY;
+
             //Preprocess
             var generator = new EllerGenerator();
             _Maze = generator.Generate(_MazeCellsX, _MazeCellsY);
@@ -48,6 +49,8 @@ namespace Nox7atra.Mazes
                 _WallThikness,
                 _Material);
             //PostProcess
+
+            _LightPlacer = new LightPlacer();
             var lightsGO = _LightPlacer.SetUpLights(_Maze, _Height);
             lightsGO.transform.SetParent(mazeGO.transform);
         }

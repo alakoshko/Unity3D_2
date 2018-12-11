@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Nox7atra.Mazes.PostProcess
+namespace Maze.Editor
 {
     public class LightPlacer : MonoBehaviour
     {

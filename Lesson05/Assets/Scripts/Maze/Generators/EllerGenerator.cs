@@ -15,6 +15,7 @@ namespace Maze.Editor
             CreateLastRow(eulerMaze);
             return eulerMaze;
         }
+
         private void CreateRow(W4Maze maze, int rowNum)
         {
             for(int i = 0; i < maze.ColumnCount - 1; i++)
@@ -105,6 +106,7 @@ namespace Maze.Editor
                 }
             }
         }
+
         private void RemoveHorizonWallBetweenCells(
             W4Maze maze,
             W4Cell leftCell, 
