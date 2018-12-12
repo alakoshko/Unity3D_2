@@ -49,6 +49,7 @@ namespace Maze.Editor
             }
         }
     }
+
     public class W4Cell
     {
         //Left first 

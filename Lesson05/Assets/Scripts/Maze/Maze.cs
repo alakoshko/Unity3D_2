@@ -15,7 +15,6 @@ namespace Maze.Editor
         }
         public virtual T GetCell(int x, int z)
         {
-
             if (x < ColumnCount && z < RowCount)
             {
                 return _Cells[x + z * ColumnCount];
@@ -29,5 +28,6 @@ namespace Maze.Editor
                 return default(T);
             }
         }
+        public override string ToString() => $"ColumnCount {ColumnCount} RowCount {RowCount} Cells {_Cells}";
     }
 }
