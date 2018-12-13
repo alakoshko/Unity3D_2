@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 19597056}
   - component: {fileID: 11450346}
   - component: {fileID: 114882048419598590}
+  - component: {fileID: 114994347691259398}
   m_Layer: 0
   m_Name: AIThirdPersonController
   m_TagString: Untagged
@@ -1818,7 +1819,7 @@ Transform:
   m_GameObject: {fileID: 113348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 154, y: 43.39, z: 54.24}
-  m_LocalScale: {x: 2.6397436, y: 2.6397436, z: 2.6397436}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 434400}
   - {fileID: 498066}
@@ -2848,3 +2849,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 723274b822865ed4d9ed2a504c0ca79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114994347691259398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21c0b7393acd8c4bace34decc6b5957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Image: {fileID: 114685718312478996, guid: 70b43283c92c4cd42bb402100bc91e01, type: 2}

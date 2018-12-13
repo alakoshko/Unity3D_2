@@ -11,7 +11,7 @@ using Random = UnityEngine.Random;
 
 namespace FPS
 {
-    public class FlockChild : MonoBehaviour, IDamageable
+    public class FlockChild : BaseSceneObject, IDamageable
     {
         [HideInInspector]
         public FlockController _spawner;            //Reference to the flock controller that spawned this bird
@@ -496,24 +496,12 @@ namespace FPS
             if (CurrentHealth <= 0) Die();
         }
 
-        //ѕока вз€л как есть
-        //TODO: прикрутить наследование от BaseSceneObject
-        protected Collider _collider;
-        public Collider Collider
-        {
-            get
-            {
-                if (!_collider) _collider = GetComponent<Collider>();
-                return _collider;
-            }
-        }
-
         public void Die()
         {
             Collider.enabled = false;
-            var rb = GetComponent<Transform>().gameObject.AddComponent<Rigidbody>();
+            var rb = GetComponent<Transform>().gameObject.GetComponent<Rigidbody>();
             rb.useGravity = true;
-            rb.mass = _maxHealth / 2;
+            rb.mass = 1000;
             //rb.AddForce(Vector3.up * Random.Range(10f, 30f), ForceMode.Impulse);
 
             m_Animator?.Play(_spawner._deadAnimation);

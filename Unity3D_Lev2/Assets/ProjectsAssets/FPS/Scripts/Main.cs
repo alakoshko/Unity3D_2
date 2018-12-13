@@ -32,10 +32,5 @@ namespace FPS
             TeammateController = gameObject.AddComponent<TeammateController>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }

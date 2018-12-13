@@ -163,6 +163,7 @@
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Ammo\MagicArrow.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\BaseSceneObject.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Buildings\BaseDoor.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\CenterLook.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Characters\Character.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Characters\EnemyBot.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Characters\FlyingCharacterAi.cs" />
@@ -183,6 +184,8 @@
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Interfaces\IDamageable.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Interfaces\IPoolable.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Main.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\MiniMap\MakeRadarObject.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\MiniMap\Radar.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Models\CastleDoorModel.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Models\FlashLightModel.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Models\PlayerModel.cs" />
@@ -237,19 +240,19 @@
      <None Include="Assets\Imported\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\Imported\SampleScenes\Shaders\Skybox-Procedural.shader" />
  <Reference Include="Unity.ProBuilder.AddOns.Editor">
- <HintPath>D:/Документы/GitHub/Unity3D_2/Unity3D_Lev2/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+ <HintPath>D:/Документы/GitHub/Unity/Unity3D_2/Unity3D_Lev2/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>D:/Документы/GitHub/Unity3D_2/Unity3D_Lev2/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>D:/Документы/GitHub/Unity/Unity3D_2/Unity3D_Lev2/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/Документы/GitHub/Unity3D_2/Unity3D_Lev2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/Документы/GitHub/Unity/Unity3D_2/Unity3D_Lev2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>D:/Документы/GitHub/Unity3D_2/Unity3D_Lev2/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>D:/Документы/GitHub/Unity/Unity3D_2/Unity3D_Lev2/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/Документы/GitHub/Unity3D_2/Unity3D_Lev2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/Документы/GitHub/Unity/Unity3D_2/Unity3D_Lev2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -432,7 +435,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.18f1/Editor/Data/Managed/Unity.Locator.dll</HintPath>
  </Reference>
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>D:/Документы/GitHub/Unity3D_2/Unity3D_Lev2/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>D:/Документы/GitHub/Unity/Unity3D_2/Unity3D_Lev2/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.18f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
