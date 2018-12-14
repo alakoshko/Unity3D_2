@@ -7,7 +7,7 @@ namespace FPS
     public class Radar : MonoBehaviour
     {
         private Transform _playerPos;     // Позиция главного героя
-        private readonly float mapScale = 2;
+        private readonly float mapScale = 1;
         public static List<RadarObject> RadObjects = new List<RadarObject>();
 
         private void Start()
@@ -42,14 +42,27 @@ namespace FPS
         {
             foreach (RadarObject radObject in RadObjects)
             {
-                Vector3 radarPos = (radObject.Owner.transform.position - _playerPos.position);
-                float distToObject = Vector3.Distance(_playerPos.position, radObject.Owner.transform.position) * mapScale;
-                float deltay = Mathf.Atan2(radarPos.x, radarPos.z) * Mathf.Rad2Deg - 270 - _playerPos.eulerAngles.y;
-                radarPos.x = distToObject * Mathf.Cos(deltay * Mathf.Deg2Rad) * -1;
-                radarPos.z = distToObject * Mathf.Sin(deltay * Mathf.Deg2Rad);
+                //обнуляем y, чтобы сократить дистанцию на карте между летающими и ходящими
+                Vector3 vOwner = radObject.Owner.transform.position;
+                vOwner.y = 0;
+                Vector3 vPlayer = _playerPos.position;
+                vPlayer.y = 0;
+
+                Vector3 radarPos2 = (vOwner - vPlayer);
+                float distToObject2 = Vector3.Distance(vPlayer, vOwner) * mapScale;
+
+                //Vector3 radarPos = (radObject.Owner.transform.position - _playerPos.position);
+                //float distToObject = Vector3.Distance(_playerPos.position, radObject.Owner.transform.position) * mapScale;
+                //float deltay = Mathf.Atan2(radarPos.x, radarPos.z) * Mathf.Rad2Deg - 270 - _playerPos.eulerAngles.y;
+                //radarPos.x = distToObject * Mathf.Cos(deltay * Mathf.Deg2Rad) * -1;
+                //radarPos.z = distToObject * Mathf.Sin(deltay * Mathf.Deg2Rad);
+                float deltay = Mathf.Atan2(radarPos2.x, radarPos2.z) * Mathf.Rad2Deg - 270 - _playerPos.eulerAngles.y;
+                radarPos2.x = distToObject2 * Mathf.Cos(deltay * Mathf.Deg2Rad) * -1;
+                radarPos2.z = distToObject2 * Mathf.Sin(deltay * Mathf.Deg2Rad);
 
                 radObject.Icon.transform.SetParent(transform);
-                radObject.Icon.transform.position = new Vector3(radarPos.x, radarPos.z, 0) + transform.position;
+                //radObject.Icon.transform.position = new Vector3(radarPos.x, radarPos.z, 0) + transform.position;
+                radObject.Icon.transform.position = new Vector3(radarPos2.x, radarPos2.z, 0) + transform.position;
             }
         }
 

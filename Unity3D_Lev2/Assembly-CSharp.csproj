@@ -53,8 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Imported\FlySamples\Birds\Bird Flocks\Scripts\Addons\UnluckDistanceDisabler.cs" />
-     <Compile Include="Assets\Imported\FlySamples\Birds\Bird Flocks\Scripts\Demo\SmoothCameraOrbit.cs" />
      <Compile Include="Assets\Imported\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\Imported\SampleScenes\Menu\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Imported\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -211,7 +209,7 @@
      <None Include="Assets\Imported\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
      <None Include="Assets\Imported\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Imported\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
-     <None Include="Assets\Imported\FlySamples\Birds\Bird Flocks\Scripts\C# Scripts\- IMPORTANT - Version Change Readme.txt" />
+     <None Include="Assets\ProjectsAssets\models\Weapons\readme.txt" />
      <None Include="Assets\Imported\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
      <None Include="Assets\Imported\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Imported\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
@@ -221,7 +219,7 @@
      <None Include="Assets\Imported\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Imported\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\ProjectsAssets\models\Characters\Knight\shaders\doublesidedshader.shader" />
-     <None Include="Assets\ProjectsAssets\models\Mega Fantasy Props Pack\README.txt" />
+     <None Include="Assets\ProjectsAssets\models\Architecture\Mega Fantasy Props Pack\README.txt" />
      <None Include="Assets\Imported\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Imported\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
      <None Include="Assets\Imported\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
