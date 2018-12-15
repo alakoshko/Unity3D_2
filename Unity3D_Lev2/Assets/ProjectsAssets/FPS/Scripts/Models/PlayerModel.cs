@@ -8,9 +8,13 @@ namespace FPS
 {
     public class PlayerModel : BaseSceneObject
     {
+        public string PlayerName = "Player01";
+
         public static PlayerModel LocalPlayer { get; private set; }
 
         public BaseWeapons[] Weapons;
+
+        public float Health = 98.7f;
 
         protected override void Awake()
         {

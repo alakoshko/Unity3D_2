@@ -181,8 +181,17 @@
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\WeaponsController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\NonConvexMeshCollider.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\ObjectsPool.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\Serializing\ConvertFunctions.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\Serializing\DataManager.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\Serializing\FPSData.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\Serializing\JsonData.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\Serializing\PlayerPrefsData.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\Serializing\StreamData.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\Serializing\TestData.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\Serializing\XMLData.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\WayPoint.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Interfaces\IDamageable.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Interfaces\IDataProvider.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Interfaces\IPoolable.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Main.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\MiniMap\MakeRadarObject.cs" />
@@ -203,6 +212,7 @@
      <None Include="Assets\Imported\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Imported\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
      <None Include="Assets\Imported\Standard Assets\Environment\Water (Basic)\DO_NOT_WORK_IN_VR.txt" />
+     <None Include="Assets\streamData.txt" />
      <None Include="Assets\Imported\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
      <None Include="Assets\Imported\Standard Assets\Effects\Projectors\Guidelines.txt" />
      <None Include="Assets\Imported\Standard Assets\Effects\ImageEffects\Readme.txt" />
