@@ -30,7 +30,7 @@ namespace FPS
             var Player = new FPSData
             {
                 PlayerName = PlayerModel.LocalPlayer.PlayerName,
-                Health = PlayerModel.LocalPlayer.Health,
+                Health = PlayerModel.LocalPlayer.MaxHealth,
                 //PlayerPosition = new Vector3(157.71f, 43.321f, 55.53f)
                 PlayerPosition = new Vector3
                 {

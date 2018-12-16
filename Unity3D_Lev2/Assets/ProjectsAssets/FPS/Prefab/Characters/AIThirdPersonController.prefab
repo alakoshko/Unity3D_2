@@ -2727,7 +2727,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4842665808922732}
   - component: {fileID: 108156169723252900}
-  - component: {fileID: 114948595835246712}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -2772,7 +2771,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257907666053790}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.027, y: 1.79, z: -0.045}
+  m_LocalPosition: {x: -0.001, y: 2.053, z: -0.026}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4166668677762264}
@@ -2788,7 +2787,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9950437, g: 1, b: 0.8066038, a: 1}
-  m_Intensity: 1.04
+  m_Intensity: 15
   m_Range: 4.14
   m_SpotAngle: 20.999992
   m_CookieSize: 10
@@ -2807,7 +2806,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -2838,17 +2837,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _followPlayerStopDistance: 1.5
---- !u!114 &114948595835246712
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1257907666053790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 723274b822865ed4d9ed2a504c0ca79d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114994347691259398
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -22,6 +22,9 @@ namespace FPS
         private int _objectCount;
         public override int ObjectsCount => _objectCount;
 
+        [SerializeField]
+        private GameObject _explosionVFX;
+
         public override void Initialize(Transform firepoint, float force)
         {
             //Destroy(gameObject, _destroyTime);
@@ -33,6 +36,13 @@ namespace FPS
             _speed = force;
             gameObject.SetActive(true);
             _isHitted = false;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            Debug.Log(other);
+            Invoke("Disable", 1f);
+            Instantiate(_explosionVFX, transform.position, transform.rotation);
         }
 
         private void FixedUpdate()

@@ -202,6 +202,7 @@
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Models\TeammateModel.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Views\FlashLightChargeView.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Views\FlashLightView.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Views\FPSHealthView.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Views\TeammateView.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Weapons\BaseWeapons.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Weapons\FlamethrowerWeapon.cs" />

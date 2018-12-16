@@ -786,7 +786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1435610516580894
 GameObject:
   m_ObjectHideFlags: 1
@@ -3413,7 +3413,7 @@ Animator:
   m_GameObject: {fileID: 1473277586500760}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1facdd05c965753438540df42151467a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -3449,7 +3449,7 @@ Animator:
   m_GameObject: {fileID: 1145800816844200}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1facdd05c965753438540df42151467a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3637,7 +3637,7 @@ MonoBehaviour:
   _timeout: 1
   CartridgeHolder: 10
   MaxCartridgeHolder: 5
-  _weaponsType: 0
+  _weaponsType: 1
   _firepoint:
   - {fileID: 4945930016781018}
 --- !u!114 &114306053902861974
@@ -3693,13 +3693,14 @@ MonoBehaviour:
     m_Bits: 1
   _poolId: firearrow01
   _objectCount: 40
+  _explosionVFX: {fileID: 0}
 --- !u!114 &114461070721860606
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d21c0b7393acd8c4bace34decc6b5957, type: 3}
   m_Name: 
@@ -3792,6 +3793,7 @@ MonoBehaviour:
     m_Bits: 1
   _poolId: firearrow01
   _objectCount: 40
+  _explosionVFX: {fileID: 0}
 --- !u!114 &114641914797519832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3825,6 +3827,7 @@ MonoBehaviour:
     m_Bits: 1
   _poolId: magicarrow01
   _objectCount: 20
+  _explosionVFX: {fileID: 0}
 --- !u!114 &114660341682552228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3861,9 +3864,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f525ca6133d6b41bf3bf5c62357e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerName: Player01
   Weapons:
   - {fileID: 114302379148041020}
   - {fileID: 114584129876852758}
+  _maxHealth: 98.5
 --- !u!135 &135691499137531052
 SphereCollider:
   m_ObjectHideFlags: 1
