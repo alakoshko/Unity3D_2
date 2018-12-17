@@ -179,6 +179,7 @@
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\Landing\LandingSpotController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\TeammateController.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\Controllers\WeaponsController.cs" />
+     <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\GraphicsOptions.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\NonConvexMeshCollider.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\ObjectsPool.cs" />
      <Compile Include="Assets\ProjectsAssets\FPS\Scripts\GameManagement\Serializing\ConvertFunctions.cs" />
