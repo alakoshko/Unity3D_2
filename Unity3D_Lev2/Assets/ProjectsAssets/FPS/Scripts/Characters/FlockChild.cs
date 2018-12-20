@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using System;
 using Random = UnityEngine.Random;
+using UnityEngine.Profiling;
 
 namespace FPS
 {
@@ -85,7 +86,7 @@ namespace FPS
             SetTarget(PlayerModel.LocalPlayer.transform);
         }
 
-        public void Awake()
+        protected override void Awake()
         {
             m_Animator = GetComponent<Animator>();
             //m_Animator.StartPlayback();
@@ -100,6 +101,8 @@ namespace FPS
 
         public void Update()
         {
+            Profiler.BeginSample("Flock");
+
             if (_currentHealth <= 0) return;
 
             //Skip frames
@@ -114,6 +117,7 @@ namespace FPS
 
                 //LimitRotationOfModel();
             }
+            Profiler.EndSample();
         }
 
         public void OnDisable()
