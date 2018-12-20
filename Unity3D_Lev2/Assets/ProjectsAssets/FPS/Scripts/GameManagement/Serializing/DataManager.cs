@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace FPS
 {
-    public class DataManager : MonoBehaviour
+    public class DataManager 
     {
         private IDataProvider _dataProvider;
 

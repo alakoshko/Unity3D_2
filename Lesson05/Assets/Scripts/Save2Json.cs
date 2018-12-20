@@ -11,7 +11,7 @@ namespace Maze.Editor
         [MenuItem("Maze/Сохранить лабиринт", false, 0)]
         public static void MazeSave()
         {
-            var sceneObj = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];                                  // Находим все объекты на сцене
+            var sceneObj = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];   // Находим все объекты на сцене
             if (sceneObj != null)
             {
                 foreach (var obj in sceneObj)
